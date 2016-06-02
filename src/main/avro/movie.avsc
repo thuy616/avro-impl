@@ -1,0 +1,169 @@
+[{
+        "namespace": "example.proto",
+		"name": "Movie",
+		"type": "record",
+		"fields": [{
+				"name": "adult",
+				"type": "boolean"
+			}, {
+				"name": "backdrop_path",
+				"type": "string"
+			}, {
+				"name": "belongs_to_collection",
+				"type": {
+					"name": "Collection",
+					"type": "record",
+					"fields": [{
+						"name": "id",
+						"type": "long"
+					}, {
+						"name": "name",
+						"type": "string"
+					}, {
+						"name": "poster_path",
+						"type": "string"
+					}, {
+						"name": "backdrop_path",
+						"type": "string"
+					}]
+				}
+			}, {
+				"name": "budget",
+				"type": "long"
+			}, {
+				"name": "genres",
+				"type": {
+					"type": "array",
+					"items": {
+						"name": "Genre",
+						"type": "record",
+						"fields": [{
+							"name": "id",
+							"type": "int"
+						}, {
+							"name": "name",
+							"type": "string"
+						}]
+					}
+				}
+			}, {
+				"name": "homepage",
+				"type": "string"
+			}, {
+				"name": "id",
+				"type": "long"
+			}, {
+				"name": "imdb_id",
+				"type": "string"
+			}, {
+				"name": "original_language",
+				"type": "string"
+			}, {
+				"name": "original_title",
+				"type": "string"
+			}, {
+				"name": "overview",
+				"type": "string"
+			}, {
+				"name": "popularity",
+				"type": "double"
+			}, {
+				"name": "poster_path",
+				"type": "string"
+			}, {
+				"name": "production_companies",
+				"type": {
+					"type": "array",
+					"items": {
+
+						"name": "ProductionCompany",
+						"type": "record",
+						"fields": [{
+								"name": "name",
+								"type": "string"
+							}, {
+								"name": "id",
+								"type": "int"
+							}
+
+						]
+
+					}
+				}
+			}, {
+				"name": "production_countries",
+				"type": {
+					"type": "array",
+					"items": {
+						"name": "ProductionCountry",
+						"type": "record",
+						"fields": [{
+							"name": "iso_3166_1",
+							"type": "string"
+						}, {
+							"name": "name",
+							"type": "string"
+						}]
+					}
+				}
+			}, {
+				"name": "release_date",
+				"type": "string"
+			}, {
+				"name": "revenue",
+				"type": "long"
+			}, {
+				"name": "runtime",
+				"type": "int"
+			}, {
+				"name": "spoken_languages",
+				"type": {
+					"type": "array",
+					"items": {
+						"name": "SpokenLanguage",
+						"type": "record",
+						"fields": [{
+							"name": "iso_639_1",
+							"type": "string"
+						}, {
+							"name": "name",
+							"type": "string"
+						}]
+					}
+				}
+			}, {
+				"name": "status",
+				"type": "string"
+			}, {
+				"name": "tagline",
+				"type": "string"
+			}, {
+				"name": "title",
+				"type": "string"
+			}, {
+				"name": "video",
+				"type": "boolean"
+			}, {
+				"name": "vote_average",
+				"type": "double"
+			}, {
+				"name": "vote_count",
+				"type": "int"
+			}
+
+		]
+	},
+
+	{
+	    "namespace": "example.proto",
+		"name": "Movies",
+		"type": "record",
+		"fields": [{
+			"name": "movies",
+			"type": {
+				"type": "array",
+				"items": "Movie"
+			}
+		}]
+	}
+]
